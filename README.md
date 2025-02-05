@@ -2,7 +2,7 @@
 A React application for displaying users and publishing, modifying, and deleting posts.
 
 
-Nested components using Hooks
+Nested components using Hooks :
 
 ![App Screenshot](public/PostAPI.png)
 
