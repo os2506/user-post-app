@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { UserProvider } from './UserContext';
+import UserList from './UserList';
+import UserPosts from './UserPosts';
+import PostEditForm from './PostEditForm'; // Import PostEditForm
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+export default function App() {
+  // Lift the selectedPost state up here
+  const [selectedPost, setSelectedPost] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <UserProvider>
+        <div className="container mt-4">
+          <h1 className="text-center">Posts API</h1>
+          <div className="row">
+            <div className="col-md-6">
+              <UserList />
+              {/* Render PostEditForm directly below UserList */}
+              {selectedPost && (
+                <PostEditForm 
+                  post={selectedPost} 
+                  onSave={() => {}} 
+                  onCancel={() => setSelectedPost(null)} 
+                />
+              )}
+            </div>
+            <div className="col-md-6">
+              <UserPosts setSelectedPost={setSelectedPost} />
+            </div>
+          </div>
+        </div>
+      </UserProvider>
   );
 }
-
-export default App;
