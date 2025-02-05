@@ -1,5 +1,7 @@
 # user-post-app
-A React application for displaying users and publishing, modifying, and deleting posts. 
+A React application for displaying users and publishing, modifying, and deleting posts.
+
+![App Screenshot](public/PostAPI.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
