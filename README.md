@@ -1,4 +1,4 @@
-# user-post-app
+# user-post-app-react
 A React application for displaying users and publishing, modifying, and deleting posts.
 
 
